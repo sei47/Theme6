@@ -1,32 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>ツイートアプリケーション</title>
-  </head>
-  <body>
-    <div class="container">
-      <header class="header">
-        <h1>一覧</h1>
-      </header>
-      <p><%= notice %></p>
+<div class="container">
+  <header class="header">
+    <h1>一覧</h1>
+  </header>
+    <p><%= notice %></p>
 
-      <table>
+    <table>
+      <tr>
+        <th>内容</th>
+      </tr>
+      <% @speak.each do |speak| %>
         <tr>
-          <th>内容</th>
+          <td><%= speak.content %></td>
         </tr>
-        <% @speak.each do |speak| %>
-          <tr>
-            <td><%= speak.content %></td>
-          </tr>
-        <% end %>
-      </table>
-      <%= link_to '新しく投稿する',new_speak_path %>
+      <% end %>
+    </table>
+    <%= link_to '新しく投稿する',new_speak_path %>
 
       <footer class="footer">
         <p>speak_app_footer</p>
       </footer>
     </div>
-  </body>
-</html>

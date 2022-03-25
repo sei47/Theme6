@@ -1,0 +1,11 @@
+<%= form_with(model: @speak, local: true) do |form| %>
+
+  <div class="new_content">
+    <%= form.label :新規投稿 %>
+    <%= form.text_field :content %>
+  </div>
+
+  <%= form.submit %>
+
+  <%= link_to "一覧画面にもどる", speaks_path %>
+<% end %>
