@@ -11,6 +11,7 @@
       <% @speak.each do |speak| %>
         <tr>
           <td><%= speak.content %></td>
+          <td><%= link_to '編集する',edit_speak_path(speak.id)  %></td>
         </tr>
       <% end %>
     </table>
