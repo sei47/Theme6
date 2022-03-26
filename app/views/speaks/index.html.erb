@@ -13,6 +13,7 @@
           <td><%= speak.content %></td>
           <td><%= link_to '内容を確認',speak_path(speak.id)  %></td>
           <td><%= link_to '編集する',edit_speak_path(speak.id)  %></td>
+          <td><%= link_to '削除する',speak_path(speak.id), method: :delete ,data: { confirm:'削除しますか？'}  %></td>
         </tr>
       <% end %>
     </table>

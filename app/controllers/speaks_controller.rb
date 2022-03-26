@@ -33,6 +33,11 @@ class SpeaksController < ApplicationController
     end
   end
 
+  def destroy
+    @speak.destroy
+    redirect_to speak_path, notice:"削除しました"
+  end
+  
   def confirm
     @speak = Speak.new(speak_param)
     render :new if @speak.invalid?
