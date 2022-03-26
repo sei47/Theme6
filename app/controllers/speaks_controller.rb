@@ -1,5 +1,5 @@
 class SpeaksController < ApplicationController
-  before_action :set_content, only:[:edit, :show]
+  before_action :set_content, only:[:edit, :show, :update, :destroy]
   def index
     @speak = Speak.all
   end
@@ -9,7 +9,7 @@ class SpeaksController < ApplicationController
   end
 
   def create
-    @speak = Speak.create(speak_param)
+    @speak = Speak.new(speak_param)
     if params[:back]
       render :new
     else
@@ -37,7 +37,7 @@ class SpeaksController < ApplicationController
     @speak.destroy
     redirect_to speak_path, notice:"削除しました"
   end
-  
+
   def confirm
     @speak = Speak.new(speak_param)
     render :new if @speak.invalid?
@@ -50,6 +50,6 @@ class SpeaksController < ApplicationController
   end
 
   def set_content
-    @speak = Speak.find(params[:id})
+    @speak = Speak.find(params[:id])
   end
 end
