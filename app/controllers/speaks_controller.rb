@@ -10,10 +10,22 @@ class SpeaksController < ApplicationController
 
   def create
     @speak = Speak.create(speak_param)
-    redirect_to speaks_path, notice:"保存しました"
+    if params[:back]
+      render :new
+    else
+      if @speak.save
+        redirect_to speaks_path, notice:"保存しました"
+      else
+        render :new
+      end
+    end
   end
 
   def edit
+  end
+
+  def confirm
+    @speak = Speak.new(speak_param)
   end
 
   private
