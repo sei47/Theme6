@@ -1,5 +1,5 @@
 class SpeaksController < ApplicationController
-  before_action :set_content, only:[:edit]
+  before_action :set_content, only:[:edit, :show]
   def index
     @speak = Speak.all
   end
@@ -21,11 +21,15 @@ class SpeaksController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
   end
 
   def confirm
     @speak = Speak.new(speak_param)
+    render :new if @speak.invalid?
   end
 
   private
