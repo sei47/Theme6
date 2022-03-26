@@ -27,6 +27,12 @@ class SpeaksController < ApplicationController
   def edit
   end
 
+  def update
+    if @speak.update(speak_param)
+      redirect_to speak_path, notice:"編集しました"
+    end
+  end
+
   def confirm
     @speak = Speak.new(speak_param)
     render :new if @speak.invalid?
