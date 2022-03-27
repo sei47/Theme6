@@ -1,15 +1,15 @@
 class SpeaksController < ApplicationController
   before_action :set_content, only:[:edit, :show, :update, :destroy]
   def index
-    @speak = Speak.all
+    @speak = Post.all
   end
 
   def new
-    @speak = Speak.new
+    @speak = Post.new
   end
 
   def create
-    @speak = Speak.new(speak_param)
+    @speak = Post.new(speak_param)
     if params[:back]
       render :new
     else
@@ -39,17 +39,17 @@ class SpeaksController < ApplicationController
   end
 
   def confirm
-    @speak = Speak.new(speak_param)
+    @speak = Post.new(speak_param)
     render :new if @speak.invalid?
   end
 
   private
 
   def speak_param
-    params.require(:speak).permit(:content)
+    params.require(:posts).permit(:content)
   end
 
   def set_content
-    @speak = Speak.find(params[:id])
+    @speak = Post.find(params[:id])
   end
 end
