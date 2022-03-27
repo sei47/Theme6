@@ -1,4 +1,4 @@
-class SpeaksController < ApplicationController
+class PostsController < ApplicationController
   before_action :set_content, only:[:edit, :show, :update, :destroy]
   def index
     @post = Post.all
@@ -9,12 +9,12 @@ class SpeaksController < ApplicationController
   end
 
   def create
-    @post = Post.new(speak_param)
+    @post = Post.new(post_param)
     if params[:back]
       render :new
     else
       if @post.save
-        redirect_to speaks_path, notice:"保存しました"
+        redirect_to posts_path, notice:"保存しました"
       else
         render :new
       end
@@ -28,24 +28,24 @@ class SpeaksController < ApplicationController
   end
 
   def update
-    if @post.update(speak_param)
-      redirect_to speak_path, notice:"編集しました"
+    if @post.update(post_param)
+      redirect_to post_path, notice:"編集しました"
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to speak_path, notice:"削除しました"
+    redirect_to post_path, notice:"削除しました"
   end
 
   def confirm
-    @post = Post.new(speak_param)
+    @post = Post.new(post_param)
     render :new if @post.invalid?
   end
 
   private
 
-  def speak_param
+  def post_param
     params.require(:posts).permit(:content)
   end
 

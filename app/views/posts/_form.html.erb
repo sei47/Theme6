@@ -1,4 +1,4 @@
-<%= form_with(model: @speak, local: true,url: choose_new_or_edit ) do |form| %>
+<%= form_with(model: @post, local: true,url: choose_new_or_edit ) do |form| %>
 
   <div class="content">
     <%= form.label :投稿内容 %>
@@ -7,5 +7,5 @@
 
   <%= form.submit %>
 
-  <%= link_to "一覧画面にもどる", speaks_path %>
+  <%= link_to "一覧画面にもどる", posts_path %>
 <% end %>
