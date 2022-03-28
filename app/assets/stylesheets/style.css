@@ -43,7 +43,13 @@ header h2{
   text-decoration: none;
   background-color: #f0e68c;
 }
-
+.error_explanation{
+  background-color: red;
+  text-align: center;
+}
+.error_explanation h2{
+  margin: 0;
+}
 .link{
   text-decoration: none;
   color: #8fbc8f;

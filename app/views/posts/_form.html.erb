@@ -1,5 +1,10 @@
 <%= form_with(model: @post, local: true,url: choose_new_or_edit ) do |form| %>
-  <% if @blog.errors%>
+  <% if @post.errors.any? %>
+    <div class="error_explanation">
+      <h2>内容が空白、または制限を超えています</h2>
+    </div>
+   <% end %>
+
   <div class="sns_img">
     <%= image_tag 'sns_happy_man.png' %>
   </div>
