@@ -4,8 +4,13 @@
     <%= form.label :投稿内容 %>
     <%= form.text_field :content %>
   </div>
+<div class="send_button">
+    <%= form.submit %>
+</div>
 
-  <%= form.submit %>
-
-  <%= link_to "一覧画面にもどる", posts_path %>
+  <%= link_to "一覧画面にもどる", posts_path, class: "back_link" %>
 <% end %>
+
+<footer class="footer">
+  <p>speak_app_footer</p>
+</footer>

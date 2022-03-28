@@ -1,5 +1,11 @@
-<h1>詳細画面</h1>
+<header>
+  <h2>詳細画面</h2>
+</header>
 
-<p><%= @post.content%></p>
+<p class="content"><%= @post.content%></p>
 
-<%= link_to "一覧画面にもどる", posts_path %>
+<%= link_to "一覧画面にもどる", posts_path, class: "back_link" %>
+
+<footer class="footer">
+  <p>speak_app_footer</p>
+</footer>
