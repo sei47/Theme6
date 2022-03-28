@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_param)
-      redirect_to post_path, notice:"編集しました"
+      redirect_to posts_path, notice:"編集しました"
     end
   end
 
