@@ -1,16 +1,19 @@
 <%= form_with(model: @post, local: true,url: choose_new_or_edit ) do |form| %>
-
-  <div class="content">
-    <%= form.label :投稿内容 %>
-    <%= form.text_field :content %>
+  <% if @blog.errors%>
+  <div class="sns_img">
+    <%= image_tag 'sns_happy_man.png' %>
   </div>
-<div class="send_button">
-    <%= form.submit %>
-</div>
+    <div class="content">
+      <%= form.label :投稿内容 %>
+      <%= form.text_field :content %>
+    </div>
+  <div class="send_button">
+      <%= form.submit %>
+  </div>
 
-  <%= link_to "一覧画面にもどる", posts_path, class: "back_link" %>
-<% end %>
+    <%= link_to "一覧画面にもどる", posts_path, class: "back_link" %>
+  <% end %>
 
-<footer class="footer">
-  <p>speak_app_footer</p>
-</footer>
+  <footer class="footer">
+    <p>speak_app_footer</p>
+  </footer>

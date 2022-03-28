@@ -2,6 +2,10 @@
   <h2>詳細画面</h2>
 </header>
 
+<div class="sns_img">
+  <%= image_tag 'sns_happy_man.png' %>
+</div>
+
 <p class="content"><%= @post.content%></p>
 
 <%= link_to "一覧画面にもどる", posts_path, class: "back_link" %>
